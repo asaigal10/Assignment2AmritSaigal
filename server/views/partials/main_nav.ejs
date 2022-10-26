@@ -43,14 +43,22 @@
               <a class="nav-link" aria-current="page" href="/services" style="color: #d3d3d3;"><b>Services</b></a>
             </li>
   
-            <% if (title == "Contact") { %>
+            <% if (title == "Contact Me") { %>
               <li class="nav item active">
             <% } else { %>
             <li class="nav-item">
             <% } %>
-              <a class="nav-link" aria-current="page" href="/contact" style="color: #d3d3d3;"><b>Contact</b></a>
+              <a class="nav-link" aria-current="page" href="/contact_me" style="color: #d3d3d3;"><b>Contact Me</b></a>
             </li>
   
+            <% if (title == "Contact List") { %>
+              <li class="nav item active">
+            <% } else { %>
+            <li class="nav-item">
+            <% } %>
+              <a class="nav-link" aria-current="page" href="/contact" style="color: #d3d3d3;"><b>Contacts List</b></a>
+  
+            </li>
           </ul>
         </div>
     </nav>

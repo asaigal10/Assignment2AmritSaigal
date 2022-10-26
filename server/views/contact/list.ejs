@@ -4,59 +4,53 @@
   
 
   <!-- Main Content -->
-  <main class="container">
+  <div class="container">
     <div class="row">
-        <div class="offset-md-1 col-md-11">
-            <h1><%= title %></h1>
-            <a href="/contact-list/add" class="btn btn-primary" role="button">
-            <i class="fas fa-plus-circle"></i> Add a Contact</a>
-            <br>
-            <table class="table table-bordered table-striped table-hover">
-                <!-- Header Row-->
-                <tr class="d-flex">
-                    <% if(typeof displayName == 'string' && displayName) { %>
-                        <th class="text-center col-2">First Name</th>
-                    <th class="text-center col-2">Last Name</th>
-                    <th class="text-center col-1">Phone Number</th>
-                    <th class="col-4">Email Address</th>
-                    <th class="text-center col-1"></th>
-                    <th class="text-center col-1"></th>
-                    <% } else { %>
-                        <th class="text-center col-2">First Name</th>
-                    <th class="text-center col-2">Last Name</th>
-                    <th class="text-center col-1">Phone Number</th>
-                    <th class="col-4">Email Address</th>
-                    <% } %>
-                </tr>
-
-                <!-- Repeatable Template Row -->
-
-                <% for(let count = 0; count < ContactList.length; count++) { %>
-                    <tr class="d-flex">
-                        <% if(typeof displayName == 'string' && displayName) { %>
-                            <td class="text-center col-2"><%= ContactList[count].first %></td>
-                            <td class="text-center col-2"><%= ContactList[count].last %></td>
-                            <td class="text-center col-1"><%= ContactList[count].phone %></td>
-                            <td class="col-4"><%= ContactList[count].email %></td>         
-                            <td class="text-center col-1">
-                                <a href="/contact-list/edit/<%= ContactList[count]._id %>" class="btn btn-primary btn-sm">
-                                <i class="fas fa-pencil-alt"></i> Edit</a>
-                            </td>
-                            <td class="text-center col-1">
-                                <a href="/contact-list/delete/<%= ContactList[count]._id %>" class="btn btn-danger btn-sm">
-                                <i class="fas fa-trash-alt"></i> Delete</a>
-                            </td>
-                         <% } else { %>
-                            <td class="text-center col-2"><%= ContactList[count].first %></td>
-                            <td class="text-center col-2"><%= ContactList[count].last %></td>
-                            <td class="text-center col-1"><%= ContactList[count].phone %></td>
-                            <td class="col-4"><%= ContactList[count].email %></td>        
-                         <% } %>
-                    </tr>
-                <% } %>
-            </table>
+      <div class="col-md-offset-1 col-md-10">
+        <h3>Contacts List Information</h3>
+  
+        <!--Add button that allows user to add contact-->
+        <a href="/contact/add" class="btn btn-primary" role="button"
+          ><i class="fa fa-plus"></i> Add Contacts</a>
+  
+        <br />
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped table-hover">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th class="text-center">Last Name</th>
+                <th class="text-center">Phone Number</th>
+                <th class="text-center">Email Address</th>
+                <th class="text-center"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Template Row -->
+              <% for (let count = 0; count < contact.length; count++) { %>
+              <tr>
+                <td><%= contact[count].first %></td>
+                <td class="text-center"><%= contact[count].last %></td>
+                <td class="text-center"><%= contact[count].phone %></td>
+                <td class="text-center"><%= contact[count].email %></td>
+  
+              </td>
+              <!--Edit button that allows user to edit contact-->
+                <td class="text-center">
+                  <a href="/contact/edit/<%= contact[count]._id %>" class="btn btn-primary btn-sm">
+                    <i class="fas fa-edit"></i> Edit</a>
+                    </td>
+                    <!--Delete button that allows user to delete contact-->
+                    <td class="text-center ">
+                      <a href="contact/delete/<%= contact[count]._id %>" class="btn btn-danger btn-sm">
+                        <i class="fa fa-remove"></i>Delete</a>
+                      </td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
         </div>
-    </div>
+    
   </main>
   
 <%- include ../partials/bottom_nav.ejs %>  
