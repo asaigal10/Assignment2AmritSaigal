@@ -15,7 +15,7 @@ module.exports.displayHomepage = (req, res, next) => {
   });
 };
 
-module.exports.displayaboutpage = (req, res, next) => {
+module.exports.displayAboutpage = (req, res, next) => {
   res.render("index", {
     title: "About",
     page: "about",
@@ -23,7 +23,7 @@ module.exports.displayaboutpage = (req, res, next) => {
   });
 };
 
-module.exports.displayprojectspage = (req, res, next) => {
+module.exports.displayProjectspage = (req, res, next) => {
   res.render("index", {
     title: "Projects",
     page: "projects",
@@ -31,7 +31,7 @@ module.exports.displayprojectspage = (req, res, next) => {
   });
 };
 
-module.exports.displayservicespage = (req, res, next) => {
+module.exports.displayServicespage = (req, res, next) => {
   res.render("index", {
     title: "Services",
     page:"services",
@@ -46,7 +46,6 @@ module.exports.displayContactpage = (req, res, next) => {
     displayName: req.user ? req.user.displayName : "",
   });
 };
-
 module.exports.displayLoginPage = (req, res, next) => {
   // check if the user is already logged in
   if (!req.user) {
@@ -66,13 +65,13 @@ module.exports.processLoginPage = (req, res, next) => {
     if (err) {
       return next(err);
     }
-    // user login error?
+    // is there a user login error?
     if (!user) {
       req.flash("loginMessage", "Authentication Error");
       return res.redirect("/login");
     }
     req.login(user, (err) => {
-      // server err?
+      // server error?
       if (err) {
         return next(err);
       }

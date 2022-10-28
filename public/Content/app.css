@@ -117,3 +117,7 @@ button[type=button]:hover {
   font-size: 18px;
   bottom: 20%;
 }
+
+.contactListTable{
+  align-items: center;
+}
