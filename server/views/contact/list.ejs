@@ -4,18 +4,21 @@
   
 
   <!-- Main Content -->
+  <center>
+    <h2>Contact Information</h2>
   <main class="contactListTable">
   
     <div class="row">
       <div class="col-md-offset-3 col-md-8">
-        <h1><%=title %></h1>
+      </center>
         <% if(typeof displayName == 'string' && displayName) { %>
         <a href="/contact-list/add" class="btn btn-primary" role="button">
         <i class ="fas fa-plus-circle"></i> Add a contact
      <%}%>
         </a>
         <br />
-        <table class="table table-bordered table-striped table-hover">
+      
+        <table class="table table-bordered table-striped table-hover table-center">
           <!--HEader row-->
           <tr>
             <th class="text-center" style="color: red">First Name</th>
@@ -31,10 +34,10 @@
           <!--Repetable Templet row-->
           <% for (let count=0; count<contactList.length; count++){%>
             <tr>
-              <td class="text-centre " style="color: red"><%=contactList[count].first %></td>
-              <td class="text-centre " style="color: red"><%=contactList[count].last %></td>
-              <td class="text-centre " style="color: red"><%=contactList[count].phone %></td>
-              <td class="text-centre " style="color: red"><%=contactList[count].email %></td>
+              <td class="text-center " style="color: red"><%=contactList[count].first %></td>
+              <td class="text-center " style="color: red"><%=contactList[count].last %></td>
+              <td class="text-center " style="color: red"><%=contactList[count].phone %></td>
+              <td class="text-center " style="color: red"><%=contactList[count].email %></td>
             
               
               <% if(typeof displayName == 'string' && displayName) { %>
@@ -50,10 +53,11 @@
             </tr>
           <%}%>
         </table>
+      
       </div>
     </div>
   </main>
-  
+
 <%- include ../partials/bottom_nav.ejs %>  
 
 <%- include ../partials/footer.ejs %>
