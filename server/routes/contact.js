@@ -2,6 +2,11 @@ let express = require("express");
 let router = express.Router();
 let mongoose = require("mongoose");
 
+/* Name: Amrit Saigal*/
+/* File Name:Authentication Details*/
+/* Student Number: 301217316*/
+/* October 28, 2022 */
+
 let passport = require("passport");
 
 // connect to our contact Model

@@ -1,3 +1,8 @@
+/* Name: Amrit Saigal*/
+/* File Name:Authentication Details*/
+/* Student Number: 301217316*/
+/* October 28, 2022 */
+
 let mongoose = require('mongoose');
 
 //create model class
